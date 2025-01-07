@@ -20,7 +20,7 @@
     body {
       font-family: 'PatronWeb', Arial, sans-serif;
       font-weight: 300;
-      margin: 40px;
+      margin: 0px;
     }
     .container {
       max-width: 600px;
@@ -73,14 +73,26 @@
     h1{
       font-family: 'PatronWeb', Arial, sans-serif;
       font-weight: 700;
+      color: white;
     } 
-    
+    .header {
+      display: flex;
+      align-items: center; /* Vertically align logo and title */
+      justify-content: space-between; /* Position logo on the left and title on the right */
+      margin-bottom: 20px;
+      background-color: #0A1324;
+      padding: 10px 25px;
+      margin: 0 auto 40px;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="header">
     <img src="./images/mendix-logo.png" alt="Mendix Logo" style="width: 200px; display: block; border: 0;">
     <h1>Email Signature Generator</h1>
+  </div>
+  <div class="container">
+    <h2>Add your information</h2>
     <label for="name">Name</label>
     <input type="text" id="name" placeholder="Your Name">
 
@@ -98,14 +110,14 @@
 
     <button onclick="generateSignature()">Generate Signature</button>
 
-    <h3>Signature Preview</h3>
+    <h2>Signature Preview</h2>
     <div id="signature-preview"></div>
 
     <button onclick="copyToClipboard()">Copy to Clipboard</button>
   </div>
   <div class="container" style="background-color: rgb(234, 234, 234); padding: 15px 40px; border-radius: 10px; ">
     <h2>How do I add my new email signature to Outlook?</h2>
-    <h3 style="padding-top:20px;">For Outlook on Windows:</h3>
+    <h3 style="padding-top:20px;">For Outlook on Windows</h3>
     <ol>
       <li>On the <strong>View</strong> tab, select <strong>View Settings</strong>.</li>
       <li>Select <strong>Accounts > Signatures</strong>.</li>
@@ -159,13 +171,13 @@
           <!-- Email -->
           <tr>
             <td style="padding: 0px 0 0 0; font-size: 10px; line-height: 10px;">
-              <a href="mailto:${email}" style="color: #0078d4; text-decoration: none;">${email}</a>
+              <a href="mailto:${email}" style="color: #146FF4; text-decoration: none;">${email}</a>
             </td>
           </tr>
           <!-- Website -->
           <tr>
             <td style="padding: 0px 0 0 0; font-size: 10px; line-height: 10px;">
-              <a href="https://mendix.com" style="color: #0078d4; text-decoration: none;">mendix.com</a>
+              <a href="https://mendix.com" style="color: #146FF4; text-decoration: none;">mendix.com</a>
             </td>
           </tr>
           <!-- Logo -->

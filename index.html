@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +28,7 @@
       .container {
         max-width: 600px;
         margin: 0 auto;
+        padding: 20px;
       }
       label {
         display: block;
@@ -77,17 +80,22 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: 20px;
+        padding: 10px 15px;
+        max-width: 1500px;
+        margin: 0 auto;
+      }
+      .header-wrapper{
         background-color: #0A1324;
-        padding: 10px 25px;
-        margin: 0 auto 40px;
       }
     </style>
 </head>
 <body>
-  <div class="header">
-    <img src="./images/mendix-logo-white.svg" alt="Mendix Logo" style="width: 200px; display: block; border: 0;">
+  <div class="header-wrapper"><div class="header">
     <h1>Email Signature Generator</h1>
-  </div>
+    <img src="./images/mendix-logo-white.svg" alt="Mendix Logo" style="width: 200px; display: block; border: 0;">
+    
+  </div></div>
+  <div style="display: flex; max-width:1500px; margin: 0 auto;">
   <div class="container">
     <h2 style="margin-bottom:0px;">Add Your Information</h2>
     <p style="color: #777e8f; margin-top:8px;">No information is stored or shared. Blank fields are omitted from the signature.</p>
@@ -118,8 +126,8 @@
   </div>
 
   <div class="container" style="background-color: #efefef; margin-top:60px; padding: 15px 40px; border-radius: 10px; ">
-    <h2>How do I add my new email signature to Outlook?</h2>
-    <h3 style="padding-top:20px;">For Outlook on Windows</h3>
+    <h3>How do I add my new email signature to Outlook?</h3>
+    <h4 style="padding-top:20px;">For Outlook on Windows</h4>
     <ol>
       <li>On the <strong>View</strong> tab, select <strong>View Settings</strong>.</li>
       <li>Select <strong>Accounts > Signatures</strong>.</li>
@@ -130,7 +138,7 @@
       <li>Select <strong>Save</strong> again.</li>
     </ol>
   
-    <h3 style="padding-top:20px;">For Outlook on Mac</h3>
+    <h4 style="padding-top:20px;">For Outlook on Mac</h4>
     <ol>
       <li>Go to <strong>Outlook > Settings > Signatures</strong>.</li>
       <li>Select the <strong>“Standard”</strong> signature and click <strong>Edit</strong>, or create a new signature.</li>
@@ -138,10 +146,12 @@
       <li>Select <strong>Save</strong>.</li>
       <li>You can now set this signature as the default for new and reply messages.</li>
     </ol>
-   <h3 style="padding-top:20px;">See more information from Microsoft</h3>
+   <h4 style="padding-top:20px;">See more information from Microsoft</h4>
    <p style="padding-bottom: 10px;"><a style="padding-left:16px; color:#146FF4" href="https://support.microsoft.com/en-us/office/create-and-add-an-email-signature-in-outlook-8ee5d4f4-68fd-464a-a1c1-0e1c80bb27f2#PickTab=New_Outlook">Windows Users</a> <a style="padding-left:16px; color: #146FF4;" href="https://support.microsoft.com/en-us/office/create-and-insert-a-signature-in-outlook-for-mac-f4d21492-0956-4429-95ad-2769745b539c">Mac Users</a></p>
+   <h4 style="padding-top:20px;">Made by the Brand Team</h4>
+   <p style="padding-bottom: 10px;">Find more helpful resources on <a style="color:#146FF4" href="https://mendix.atlassian.net/wiki/x/voEAj">Confluence</a> </p>
     </div>
- 
+  </div>
 </body>
 <script>
   function generateSignature() {

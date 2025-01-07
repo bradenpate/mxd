@@ -103,30 +103,34 @@
 
     <button onclick="copyToClipboard()">Copy to Clipboard</button>
   </div>
+  <div class="container" style="background-color: rgb(234, 234, 234); padding: 15px 40px; border-radius: 10px; ">
+    <h2>How do I add my new email signature to Outlook?</h2>
+    <h3 style="padding-top:20px;">For Outlook on Windows:</h3>
+    <ol>
+      <li>On the <strong>View</strong> tab, select <strong>View Settings</strong>.</li>
+      <li>Select <strong>Accounts > Signatures</strong>.</li>
+      <li>Select <strong>New signature</strong>, then give it a distinct name.</li>
+      <li>In the editing box below the new name, paste from the Word document into the signature field.</li>
+      <li>A clipboard icon should appear; select <strong>“Keep Source Formatting.”</strong></li>
+      <li>Select <strong>Save</strong> when you're done.</li>
+      <li>With your new signature selected from the list above the editing box, go to <strong>Select default signatures</strong> and choose whether to apply the signature to new messages and to replies and forwards.</li>
+      <li>Select <strong>Save</strong> again.</li>
+    </ol>
+  
+    <h3 style="padding-top:20px;">For Outlook on Mac</h3>
+    <ol>
+      <li>Go to <strong>Outlook > Settings > Signatures</strong>.</li>
+      <li>Select the <strong>“Standard”</strong> signature and click <strong>Edit</strong>, or create a new signature.</li>
+      <li>Paste from your clipboard into the signature field.</li>
+      <li>Select <strong>Save</strong>.</li>
+      <li>You can now set this signature as the default for new and reply messages.</li>
+    </ol>
+   <h3 style="padding-top:20px;">See more information from Microsoft</h3>
+   <p style="padding-bottom: 10px;"><a style="padding-left:16px; color:#146FF4" href="https://support.microsoft.com/en-us/office/create-and-add-an-email-signature-in-outlook-8ee5d4f4-68fd-464a-a1c1-0e1c80bb27f2#PickTab=New_Outlook">Windows Users</a> <a style="padding-left:16px; color: #146FF4;" href="https://support.microsoft.com/en-us/office/create-and-insert-a-signature-in-outlook-for-mac-f4d21492-0956-4429-95ad-2769745b539c">Mac Users</a></p>
+    </div>
+ 
 
-  <div class="container" style="display:none; background-color: rgb(234, 234, 234); padding: 10px 30px; border-radius: 10px; ">
-  <h2>How do I add my new email signature to Outlook?</h2>
-  <h3>For Outlook on Windows and Mac:</h3>
-  <ol>
-    <li>Log in to your Outlook account and select the <strong>Home</strong> tab > <strong>New Email</strong>.</li>
-    <li>Click the <strong>Message</strong> tab.</li>
-    <li>In the <strong>Include</strong> group section, select <strong>Signature</strong> > <strong>Signatures</strong>.</li>
-    <li>In the <strong>Choose Default Signature</strong> section, select the account you would like to associate with the signature from the email account dropdown.</li>
-    <li>In the <strong>Select Signature to Edit</strong> section, click the <strong>New</strong> button and name your signature.</li>
-    <li>In the <strong>Edit Signature</strong> section, paste in your HubSpot-generated signature and select <strong>OK</strong>.</li>
-  </ol>
-
-  <h3>For Outlook on the Web and Outlook.com:</h3>
-  <ol>
-    <li>Log in to Outlook on the web and click on the cog in the top-right corner.</li>
-    <li>Select <strong>View all Outlook settings</strong> at the bottom of the column.</li>
-    <li>Navigate to <strong>Email > Compose and Reply</strong>.</li>
-    <li>Name your signature in the <strong>Edit Signature name</strong> field.</li>
-    <li>Paste your signature for Outlook in the <strong>Edit Signature</strong> section.</li>
-    <li>Select <strong>Save</strong>.</li>
-  </ol>
-</div>
-
+ 
   <script>
     function generateSignature() {
       const name = document.getElementById('name').value;

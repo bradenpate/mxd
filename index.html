@@ -169,7 +169,7 @@
           <tr>
             <td style="padding: 15px 0 0 0;">
                <a href="https://mendix.com">
-               <img src="/images/mendix-logo.png" alt="Mendix Logo" width="200" style="display: block; border: 0;"></a>
+               <img src="https://email.mendix.design/images/mendix-logo.png" alt="Mendix Logo" width="200" style="display: block; border: 0;"></a>
             </td>
           </tr>
         </table>
@@ -180,25 +180,30 @@
 
     function copyToClipboard() {
   const preview = document.getElementById('signature-preview');
-  const tempTextarea = document.createElement('textarea'); // Create a temporary textarea
+  
+  // Create a range and select the content of the signature preview
+  const range = document.createRange();
+  range.selectNodeContents(preview);
 
-  // Get only the inner HTML of the signature preview
-  tempTextarea.value = preview.innerHTML;
+  // Create a temporary selection
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  selection.addRange(range);
 
-  // Append the textarea to the body temporarily
-  document.body.appendChild(tempTextarea);
+  // Use the Clipboard API to write HTML content
+  navigator.clipboard.write([
+    new ClipboardItem({
+      'text/html': new Blob([preview.innerHTML], { type: 'text/html' }),
+      'text/plain': new Blob([preview.textContent], { type: 'text/plain' })
+    })
+  ]).then(() => {
+    alert('Signature copied to clipboard!');
+  }).catch((err) => {
+    console.error('Could not copy the signature:', err);
+  });
 
-  // Select the content of the textarea
-  tempTextarea.select();
-  tempTextarea.setSelectionRange(0, 99999); // For mobile compatibility
-
-  // Copy the content
-  document.execCommand('copy');
-
-  // Remove the temporary textarea
-  document.body.removeChild(tempTextarea);
-
-  alert('Signature copied to clipboard!');
+  // Clear the selection
+  selection.removeAllRanges();
 }
   </script>
 </body>

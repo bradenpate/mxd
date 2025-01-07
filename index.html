@@ -104,6 +104,29 @@
     <button onclick="copyToClipboard()">Copy to Clipboard</button>
   </div>
 
+  <div class="container" style="display:none; background-color: rgb(234, 234, 234); padding: 10px 30px; border-radius: 10px; ">
+  <h2>How do I add my new email signature to Outlook?</h2>
+  <h3>For Outlook on Windows and Mac:</h3>
+  <ol>
+    <li>Log in to your Outlook account and select the <strong>Home</strong> tab > <strong>New Email</strong>.</li>
+    <li>Click the <strong>Message</strong> tab.</li>
+    <li>In the <strong>Include</strong> group section, select <strong>Signature</strong> > <strong>Signatures</strong>.</li>
+    <li>In the <strong>Choose Default Signature</strong> section, select the account you would like to associate with the signature from the email account dropdown.</li>
+    <li>In the <strong>Select Signature to Edit</strong> section, click the <strong>New</strong> button and name your signature.</li>
+    <li>In the <strong>Edit Signature</strong> section, paste in your HubSpot-generated signature and select <strong>OK</strong>.</li>
+  </ol>
+
+  <h3>For Outlook on the Web and Outlook.com:</h3>
+  <ol>
+    <li>Log in to Outlook on the web and click on the cog in the top-right corner.</li>
+    <li>Select <strong>View all Outlook settings</strong> at the bottom of the column.</li>
+    <li>Navigate to <strong>Email > Compose and Reply</strong>.</li>
+    <li>Name your signature in the <strong>Edit Signature name</strong> field.</li>
+    <li>Paste your signature for Outlook in the <strong>Edit Signature</strong> section.</li>
+    <li>Select <strong>Save</strong>.</li>
+  </ol>
+</div>
+
   <script>
     function generateSignature() {
       const name = document.getElementById('name').value;
@@ -156,15 +179,27 @@
     }
 
     function copyToClipboard() {
-      const preview = document.getElementById('signature-preview');
-      const range = document.createRange();
-      range.selectNode(preview);
-      const selection = window.getSelection();
-      selection.removeAllRanges();
-      selection.addRange(range);
-      document.execCommand('copy');
-      alert('Signature copied to clipboard!');
-    }
+  const preview = document.getElementById('signature-preview');
+  const tempTextarea = document.createElement('textarea'); // Create a temporary textarea
+
+  // Get only the inner HTML of the signature preview
+  tempTextarea.value = preview.innerHTML;
+
+  // Append the textarea to the body temporarily
+  document.body.appendChild(tempTextarea);
+
+  // Select the content of the textarea
+  tempTextarea.select();
+  tempTextarea.setSelectionRange(0, 99999); // For mobile compatibility
+
+  // Copy the content
+  document.execCommand('copy');
+
+  // Remove the temporary textarea
+  document.body.removeChild(tempTextarea);
+
+  alert('Signature copied to clipboard!');
+}
   </script>
 </body>
 </html>

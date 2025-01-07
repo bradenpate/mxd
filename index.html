@@ -46,7 +46,6 @@
     button {
       width: 100%;
       margin-top: 20px;
-      margin-bottom: 50px;
       padding: 12px;
       border-radius: 5px;
       background-color: #146FF4;
@@ -88,7 +87,7 @@
 </head>
 <body>
   <div class="header">
-    <img src="./images/mendix-logo.png" alt="Mendix Logo" style="width: 200px; display: block; border: 0;">
+    <img src="./images/mendix-logo-white.svg" alt="Mendix Logo" style="width: 200px; display: block; border: 0;">
     <h1>Email Signature Generator</h1>
   </div>
   <div class="container">
@@ -110,12 +109,12 @@
 
     <button onclick="generateSignature()">Generate Signature</button>
 
-    <h2>Signature Preview</h2>
+    <h2 style="margin-top: 50px;">Signature Preview</h2>
     <div id="signature-preview"></div>
 
     <button onclick="copyToClipboard()">Copy to Clipboard</button>
   </div>
-  <div class="container" style="background-color: rgb(234, 234, 234); padding: 15px 40px; border-radius: 10px; ">
+  <div class="container" style=" margin-top: 60px; background-color: #efefef; padding: 15px 40px; border-radius: 10px; ">
     <h2>How do I add my new email signature to Outlook?</h2>
     <h3 style="padding-top:20px;">For Outlook on Windows</h3>
     <ol>

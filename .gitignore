@@ -5,3 +5,4 @@ tailwind.config.js
 input.css.DS_Store
 .DS_Store
 test.html
+generateHybridMetadata.js

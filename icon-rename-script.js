@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "name" // Use "name" as the unique identifier for deduplication
         );
 
-        console.log("Loaded Icons (After Deduplication):", icons); // Debugging
         populateCategoryFilter(icons);
         displayIcons(icons);
     }
@@ -53,9 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function populateCategoryFilter(iconList) {
         const categories = Array.from(
             new Set(iconList.map(icon => icon.category || "Uncategorized"))
-        ).sort(); // Get unique categories and sort them alphabetically
-
-        console.log("Categories Extracted:", categories); // Debugging
+        ).sort();
 
         categoryFilter.innerHTML = `
             <option value="all">All Categories</option>
@@ -63,47 +60,65 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 
-    // Function to display icons
+    // Function to display icons grouped by category
     function displayIcons(iconList) {
-        const uniqueIcons = Array.from(new Set(iconList.map(JSON.stringify))).map(JSON.parse); // Extra deduplication
+        const uniqueIcons = Array.from(new Set(iconList.map(JSON.stringify))).map(JSON.parse);
+        const categories = Array.from(
+            new Set(uniqueIcons.map(icon => icon.category || "Uncategorized"))
+        ).sort();
 
         iconGallery.innerHTML = "";
 
-        uniqueIcons.forEach(icon => {
-            const iconCard = document.createElement("div");
-            iconCard.className = "icon-card";
+        categories.forEach(category => {
+            // Create a section for each category
+            const categorySection = document.createElement("section");
+            categorySection.className = "category-section";
 
-            iconCard.innerHTML = `
-                <div class="category">${icon.category}</div>
-                <h3>${icon.name}</h3>
-                <div class="icon-card-content">
-                    ${
-                        icon.filled
-                            ? `
-                                <div class="icon-column">
-                                <div class="type">Fill</div>
-                                    <img src="${icon.filled}" alt="${icon.name} (Filled)">
-                                    <a href="${icon.filled}" download="${icon.name}-filled.svg">Download</a>
-                                </div>
-                            `
-                            : "<div class='icon-column'><p>Filled version not available</p></div>"
-                    }
-                    ${
-                        icon.lined
-                            ? `
-                                <div class="icon-column">
-                                <div class="type">Lined</div>
-                                    <img src="${icon.lined}" alt="${icon.name} (Lined)">
-                                    <a href="${icon.lined}" download="${icon.name}-lined.svg">Download</a>
-                                </div>
-                            `
-                            : "<div class='icon-column'><p>Lined version not available</p></div>"
-                    }
-                </div>
-                <div class="description">${icon.description}</div>
-            `;
+            // Add category title
+            const categoryTitle = document.createElement("h2");
+            categoryTitle.className = "category-title";
+            categoryTitle.textContent = category;
+            categorySection.appendChild(categoryTitle);
 
-            iconGallery.appendChild(iconCard);
+            // Add icons for this category
+            const categoryIcons = uniqueIcons.filter(icon => icon.category === category);
+            categoryIcons.forEach(icon => {
+                const iconCard = document.createElement("div");
+                iconCard.className = "icon-card";
+
+                iconCard.innerHTML = `
+                    <h3>${icon.name}</h3>
+                    <div class="icon-card-content">
+                        ${
+                            icon.filled
+                                ? `
+                                    <div class="icon-column">
+                                        <div class="type">Fill</div>
+                                        <img src="${icon.filled}" alt="${icon.name} (Filled)">
+                                        <a href="${icon.filled}" download="${icon.name}-filled.svg">Download</a>
+                                    </div>
+                                `
+                                : "<div class='icon-column'><p>Filled version not available</p></div>"
+                        }
+                        ${
+                            icon.lined
+                                ? `
+                                    <div class="icon-column">
+                                        <div class="type">Lined</div>
+                                        <img src="${icon.lined}" alt="${icon.name} (Lined)">
+                                        <a href="${icon.lined}" download="${icon.name}-lined.svg">Download</a>
+                                    </div>
+                                `
+                                : "<div class='icon-column'><p>Lined version not available</p></div>"
+                        }
+                    </div>
+                    <div class="description">${icon.description}</div>
+                `;
+
+                categorySection.appendChild(iconCard);
+            });
+
+            iconGallery.appendChild(categorySection);
         });
     }
 
@@ -131,8 +146,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             return matchesSearch && matchesCategory;
         });
-
-        console.log("Filtered Icons (Before Display):", filteredIcons); // Debugging
 
         displayIcons(filteredIcons);
     }

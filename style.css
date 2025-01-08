@@ -189,7 +189,7 @@ body {
     background-color: #0056b3;
 }
 .category-section {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
@@ -198,8 +198,8 @@ body {
 .category-title {
     font-size: 24px;
     margin-bottom: 0px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
+    border-top: 2px solid #ddd;
+    padding-top: 30px;
     color: #333;
     grid-column: 1 / -1;
 }

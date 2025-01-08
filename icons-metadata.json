@@ -7518,20 +7518,7 @@
       "filled": "./images/icons/filled/flask-conical.svg",
       "lined": "./images/icons/lined/flask-conical.svg"
     },
-    {
-      "name": "Controls",
-      "description": "Used for open sidebar action\n\n\nsidebar, open, close, interface, panel, arrow, chevron,expand",
-      "category": "Arrows",
-      "filled": null,
-      "lined": null
-    },
-    {
-      "name": "Controls",
-      "description": "Used for close sidebar action\n\n\nsidebar, open, close, interface, panel, arrow, chevron",
-      "category": "Arrows",
-      "filled": null,
-      "lined": null
-    },
+
     {
       "name": "flask-conical",
       "description": "Science, lab, experiment, erlenmeyer, vessel, substance, testing, project",
@@ -7539,20 +7526,7 @@
       "filled": "./images/icons/filled/flask-conical.svg",
       "lined": "./images/icons/lined/flask-conical.svg"
     },
-    {
-      "name": "Controls",
-      "description": "Used for open sidebar action\n\n\nsidebar, open, close, interface, panel, arrow, chevron,expand",
-      "category": "Arrows",
-      "filled": null,
-      "lined": null
-    },
-    {
-      "name": "Controls",
-      "description": "Used for close sidebar action\n\n\nsidebar, open, close, interface, panel, arrow, chevron",
-      "category": "Arrows",
-      "filled": null,
-      "lined": null
-    },
+   
     {
       "name": "chevron-down",
       "description": "Arrows / Controls, arrow, down, chevron, pointing, direction, move, rank",
@@ -8282,13 +8256,7 @@
       "filled": "./images/icons/filled/server-shield.svg",
       "lined": "./images/icons/lined/server-shield.svg"
     },
-    {
-      "name": "Controls",
-      "description": "Used for Slash Key in PDS Search components\n\n\nbutton, key, keyboard, slash",
-      "category": "Arrows",
-      "filled": null,
-      "lined": null
-    },
+    
     {
       "name": "book-open-sparkle",
       "description": "Used for Generative AI Knowledge base (temporarily, may change)\n\n\nTechnology, learning, ai, artificial intelligence, information, book, text",

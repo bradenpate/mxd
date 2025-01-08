@@ -5174,20 +5174,6 @@
       "lined": "./images/icons/lined/view-off.svg"
     },
     {
-      "name": "Controls",
-      "description": "Used for Enter Key in PDS Search components\n\n\nbutton, key, keyboard, enter, return, arrow, command line",
-      "category": "Arrows",
-      "filled": null,
-      "lined": null
-    },
-    {
-      "name": "Controls",
-      "description": "Used for Slash Key in PDS Search components\n\n\nbutton, key, keyboard, slash",
-      "category": "Arrows",
-      "filled": null,
-      "lined": null
-    },
-    {
       "name": "mendix-browser",
       "description": "Used for the Mendix Platform, a.k.a Developer Portal\nMendix, platform, development",
       "category": "Mendix",
@@ -5209,11 +5195,11 @@
       "lined": "./images/icons/lined/cloud.svg"
     },
     {
-      "name": "People/ user-developer",
+      "name": "user-developer",
       "description": "Used for (high-code) developer\nPeople, developer, software development, collaboration, programming, innovation, technical, employee",
-      "category": "People/ user-developer",
-      "filled": null,
-      "lined": null
+      "category": "People",
+      "filled": "./images/icons/filled/user-developer.svg",
+      "lined": "./images/icons/lined/user-developer.svg"
     },
     {
       "name": "color-painting-palette",
@@ -5277,13 +5263,6 @@
       "category": "Arrows-Controls",
       "filled": "./images/icons/filled/direction-buttons-arrows.svg",
       "lined": "./images/icons/lined/direction-buttons-arrows.svg"
-    },
-    {
-      "name": "People/ user-developer",
-      "description": "Used for (high-code) developer\nPeople, developer, software development, collaboration, programming, innovation, technical, employee",
-      "category": "People/ user-developer",
-      "filled": null,
-      "lined": null
     },
     {
       "name": "gift",
@@ -7805,13 +7784,7 @@
       "filled": "./images/icons/filled/plane-ticket.svg",
       "lined": "./images/icons/lined/plane-ticket.svg"
     },
-    {
-      "name": "file-cvs",
-      "description": "Used for .cvs files\n\n\nFile Types, logs, document, file",
-      "category": "File Types",
-      "filled": null,
-      "lined": null
-    },
+  
     {
       "name": "share",
       "description": "Share, forward, navigate out, direction, curved, export, open, link, download",
@@ -8329,13 +8302,6 @@
       "category": "AI",
       "filled": "./images/icons/filled/brackets-sparkle.svg",
       "lined": "./images/icons/lined/brackets-sparkle.svg"
-    },
-    {
-      "name": "Controls",
-      "description": "Used for Enter Key in PDS Search components\n\n\nbutton, key, keyboard, enter, return, arrow, command line",
-      "category": "Arrows",
-      "filled": null,
-      "lined": null
     },
     {
       "name": "server-shield",

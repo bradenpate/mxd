@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 20px;
-}
-
-#cropperContainer {
-  margin: 20px auto;
-  max-width: 80%;
-}
-
-img {
-  max-width: 100%;
-}
-    </style>
+  <style>body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  #cropperContainer {
+    margin: 20px auto;
+    max-width: 80%;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  #previewContainer div {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+  }</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Headshot Editor</title>
@@ -29,16 +33,17 @@ img {
 
   <!-- File Upload -->
   <input type="file" id="fileInput" accept="image/*">
-
-  <!-- Image Crop Area -->
   <div id="cropperContainer" style="display: none;">
     <img id="image" alt="Upload an image to crop">
   </div>
 
-  <!-- Export Button -->
-  <button id="exportButton" style="display: none;">Export PNG</button>
+  <!-- Generate Button -->
+  <button id="generateButton" style="display: block; margin: 20px;">Generate Previews</button>
+
+  <!-- Preview Container -->
+  <div id="previewContainer" style="display: flex; flex-wrap: wrap; justify-content: center;"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
-  <script src="/app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>

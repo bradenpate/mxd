@@ -85,7 +85,7 @@ body {
 }
 
 .icon-column img {
-    width: 48px;
+    width: 100%;
     height: 48px;
     margin-bottom: 10px;
 

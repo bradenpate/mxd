@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+/* Patron Black */
+@font-face {
+  font-family: 'Patron';
+  src: url('fonts/PatronWEB-Black.woff2') format('woff2'),
+       url('fonts/PatronWEB-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Patron';
+  src: url('fonts/PatronWEB-BlackItalic.woff2') format('woff2'),
+       url('fonts/PatronWEB-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Patron Bold */
+@font-face {
+  font-family: 'Patron';
+  src: url('fonts/PatronWEB-Bold.woff2') format('woff2'),
+       url('fonts/PatronWEB-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Patron';
+  src: url('fonts/PatronWEB-BoldItalic.woff2') format('woff2'),
+       url('fonts/PatronWEB-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Patron Medium */
+@font-face {
+  font-family: 'Patron';
+  src: url('fonts/PatronWEB-Medium.woff2') format('woff2'),
+       url('fonts/PatronWEB-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Patron';
+  src: url('fonts/PatronWEB-MediumItalic.woff2') format('woff2'),
+       url('fonts/PatronWEB-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Patron Regular */
+@font-face {
+  font-family: 'Patron';
+  src: url('fonts/PatronWEB-Regular.woff2') format('woff2'),
+       url('fonts/PatronWEB-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Patron';
+  src: url('fonts/PatronWEB-Italic.woff2') format('woff2'),
+       url('fonts/PatronWEB-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Patron Light */
+@font-face {
+  font-family: 'Patron';
+  src: url('fonts/PatronWEB-Light.woff2') format('woff2'),
+       url('fonts/PatronWEB-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Patron';
+  src: url('fonts/PatronWEB-LightItalic.woff2') format('woff2'),
+       url('fonts/PatronWEB-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Patron Thin */
+@font-face {
+  font-family: 'Patron';
+  src: url('fonts/PatronWEB-Thin.woff2') format('woff2'),
+       url('fonts/PatronWEB-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Patron';
+  src: url('fonts/PatronWEB-ThinItalic.woff2') format('woff2'),
+       url('fonts/PatronWEB-ThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+}
+
+}

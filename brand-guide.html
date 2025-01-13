@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mendix Brand Guidelines</title>
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        .active-link {
+            
+            color: #4481F2 !important;
+        }
+
+        nav a {
+            color: white; /* Default color for links */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #4481F2; /* Hover color */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-patron">
+    <div class="flex flex-col md:flex-row">
+    <!-- Sidebar -->
+    <aside class="fixed inset-y-0 left-0 z-50 p-6 space-y-6 overflow-y-auto font-bold transition-transform duration-300 transform -translate-x-full shadow-md max-w-72 md:relative md:translate-x-0 bg-neutral-midnight md:w-1/4 lg:1/5" id="sidebar" aria-hidden="true">
+        <!-- Close Button (Visible on Mobile) -->
+        <button id="close-menu" class="absolute text-xl text-white top-4 right-4 md:hidden" aria-label="Close Menu">
+            ✕
+        </button>
+
+        <!-- Search Bar -->
+        <input 
+            type="text" 
+            placeholder="Search guidelines..." 
+            class="w-full px-4 py-2 font-light text-white rounded-md text-m bg-neutral-twilight"
+            id="search-bar"
+        >
+
+        <!-- Navigation Links -->
+        <nav>
+            <ul class="space-y-1">
+                <li><a href="#logo" class="nav-link">Logo</a></li>
+                <li><a href="#color" class="nav-link">Color</a></li>
+                <li><a href="#typography" class="nav-link">Typography</a></li>
+                <li><a href="#photography" class="nav-link">Photography</a></li>
+                <li><a href="#illustration" class="nav-link">Illustration</a></li>
+                <li><a href="#iconography" class="nav-link">Iconography</a></li>
+                <li><a href="#treatments" class="nav-link">Treatments</a></li>
+                <li><a href="#motion" class="nav-link">Motion</a></li>
+                <li><a href="#voice-copy" class="nav-link">Voice</a></li>
+                <li><a href="#application" class="nav-link">Application</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button id="open-menu" class="fixed top-0 left-0 p-3 text-2xl text-white bg-neutral-twilight md:hidden" aria-label="Open Menu">
+        ☰
+    </button>
+        <!-- Main Content -->
+
+    
+    <main class="max-w-6xl px-8 mx-auto space-y-16 md:w-4/5 lg:4/5 sm:px-24 sm:py:0">
+                
+    <div id="header" class="flex items-center justify-between px-12 py-3 sm:px-8 bg-neutral-midnight">
+        <h2 class="mb-0 text-2xl font-bold text-white md:text-3xl font-patron md:w-auto">mendix</h2>
+
+            <h2 class="mb-0 text-2xl font-bold text-white md:text-3xl font-patron md:w-auto">
+                Brand Guide
+            </h2>
+        
+    </div>
+    <section id="logo" class="space-y-16 scroll-mt-24">
+        <!-- Logo Section Header -->
+        <div class="flex items-center justify-between pb-6 border-b border-b-neutral-midnight">
+            <h2 class="text-4xl font-bold md:text-6xl">Logo</h2>
+            <button class="px-4 py-2 text-sm text-white rounded-md bg-neutral-midnight md:text-base">
+                Download All
+            </button>
+        </div>
+    
+        <!-- Introductory Text -->
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <p>
+                Keyboards. Windows. Elements. Applications. Even floppy disks. Squares—simple, essential building blocks 
+                that, when combined, create extraordinary things. This foundational principle is the ethos behind the 
+                Mendix logo.
+            </p>
+            <p>
+                A simple, rounded square with our “MX” in the bottom left corner symbolizes our role in this composition. 
+                We are not at the center but an integral part of the framework. The open space represents the limitless 
+                potential of our customers—the room for their transformative, business-changing, and life-enhancing ideas 
+                to take shape and become reality.
+            </p>
+        </div>
+    
+        <!-- Logos Subsection -->
+         <div>
+        <div class="grid grid-cols-1 gap-6 py-8 mt-6 border-t border-neutral-midnight sm:grid-cols-2">
+            <h3 class="mb-2 text-2xl font-bold md:text-3xl text-neutral-midnight">Primary Logo</h3>
+            <p>
+                The primary logo for Mendix uses the "A Siemens Business" tagline. This is the default logo version for most applications. At very small sizes, the tagline can be removed.
+            </p>
+        </div>
+            
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Individual Logo Item -->
+                    <div class="relative p-10 rounded-lg shadow-md group bg-neutral-white">
+                        <img class="w-full" src="./images/mendix-logos/mendix-siemens-tagline-blue.svg" alt="Mendix Logo Blue">
+                        <a href="./images/mendix-logos/mendix-siemens-tagline-blue.svg" download 
+                           class="absolute p-2 text-white transition-opacity rounded-md opacity-0 bottom-4 right-4 bg-primary-blueLM group-hover:opacity-100">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.3075L6.96753 10.2825L8.03253 9.2175L11.25 12.4425V1.5H12.75V12.4425L15.9675 9.2175L17.0325 10.2825L12 15.3075ZM16.5 6H19.5C20.325 6 21 6.675 21 7.5V18C21 18.825 20.325 19.5 19.5 19.5H4.5C3.675 19.5 3 18.825 3 18V7.5C3 6.675 3.675 6 4.5 6H7.5V7.5H4.5V18H19.5V7.5H16.5V6Z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+            
+                    <!-- Repeat for other logo items -->
+                     
+                    <div class="relative p-10 rounded-lg shadow-md group bg-neutral-white">
+                        <img class="w-full" src="./images/mendix-logos/mendix-siemens-tagline-midnight.svg" alt="Mendix Logo Midnight">
+                        <a href="./images/mendix-logos/mendix-siemens-tagline-midnight.svg" download 
+                           class="absolute p-2 text-white transition-opacity rounded-md opacity-0 bottom-4 right-4 bg-primary-blueLM group-hover:opacity-100">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.3075L6.96753 10.2825L8.03253 9.2175L11.25 12.4425V1.5H12.75V12.4425L15.9675 9.2175L17.0325 10.2825L12 15.3075ZM16.5 6H19.5C20.325 6 21 6.675 21 7.5V18C21 18.825 20.325 19.5 19.5 19.5H4.5C3.675 19.5 3 18.825 3 18V7.5C3 6.675 3.675 6 4.5 6H7.5V7.5H4.5V18H19.5V7.5H16.5V6Z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+            
+                    <div class="relative p-10 rounded-lg shadow-md group bg-neutral-midnight">
+                        <img class="w-full" src="./images/mendix-logos/mendix-siemens-tagline-white.svg" alt="Mendix Logo White">
+                        <a href="./images/mendix-logos/mendix-siemens-tagline-white.svg" download 
+                           class="absolute p-2 text-white transition-opacity rounded-md opacity-0 bottom-4 right-4 bg-primary-blueLM group-hover:opacity-100">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.3075L6.96753 10.2825L8.03253 9.2175L11.25 12.4425V1.5H12.75V12.4425L15.9675 9.2175L17.0325 10.2825L12 15.3075ZM16.5 6H19.5C20.325 6 21 6.675 21 7.5V18C21 18.825 20.325 19.5 19.5 19.5H4.5C3.675 19.5 3 18.825 3 18V7.5C3 6.675 3.675 6 4.5 6H7.5V7.5H4.5V18H19.5V7.5H16.5V6Z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            
+        </div>
+             <!-- Logos Subsection -->
+             <div>
+                <div class="grid grid-cols-1 gap-6 py-8 mt-6 border-t border-neutral-midnight sm:grid-cols-2">
+                    <h3 class="mb-2 text-2xl font-bold md:text-3xl text-neutral-midnight">Wordmark</h3>
+                    <p class="text-base text-gray-600">
+                        The wordmark can stand alone as long as the primary logo is somewhere else within the asset. We use this treatment in the website navigation where space is limited. This version of the logo is also the predominate versiion used in the online platform.
+                    </p>
+                </div>
+                    
+                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 sm:grid-cols-2 ">
+                            <!-- Individual Logo Item -->
+                            <div class="relative p-10 rounded-lg shadow-md group bg-neutral-white">
+                                <img class="w-full" src="./images/mendix-logos/mendix-wordmark-blue.svg" alt="Mendix Logo Blue">
+                                <a href="./images/mendix-logos/mendix-wordmark-blue.svg" download 
+                                   class="absolute p-2 text-white transition-opacity rounded-md opacity-0 bottom-4 right-4 bg-primary-blueLM group-hover:opacity-100">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.3075L6.96753 10.2825L8.03253 9.2175L11.25 12.4425V1.5H12.75V12.4425L15.9675 9.2175L17.0325 10.2825L12 15.3075ZM16.5 6H19.5C20.325 6 21 6.675 21 7.5V18C21 18.825 20.325 19.5 19.5 19.5H4.5C3.675 19.5 3 18.825 3 18V7.5C3 6.675 3.675 6 4.5 6H7.5V7.5H4.5V18H19.5V7.5H16.5V6Z" fill="white"/>
+                                    </svg>
+                                </a>
+                            </div>
+                    
+                            <!-- Repeat for other logo items -->
+                             
+                            <div class="relative p-10 rounded-lg shadow-md group bg-neutral-white">
+                                <img class="w-full" src="./images/mendix-logos/mendix-wordmark-midnight.svg" alt="Mendix Logo Midnight">
+                                <a href="./images/mendix-logos/mendix-wordmark-midnight.svg" download 
+                                   class="absolute p-2 text-white transition-opacity rounded-md opacity-0 bottom-4 right-4 bg-primary-blueLM group-hover:opacity-100">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.3075L6.96753 10.2825L8.03253 9.2175L11.25 12.4425V1.5H12.75V12.4425L15.9675 9.2175L17.0325 10.2825L12 15.3075ZM16.5 6H19.5C20.325 6 21 6.675 21 7.5V18C21 18.825 20.325 19.5 19.5 19.5H4.5C3.675 19.5 3 18.825 3 18V7.5C3 6.675 3.675 6 4.5 6H7.5V7.5H4.5V18H19.5V7.5H16.5V6Z" fill="white"/>
+                                    </svg>
+                                </a>
+                            </div>
+                    
+                            <div class="relative p-10 rounded-lg shadow-md group bg-neutral-midnight">
+                                <img class="w-full" src="./images/mendix-logos/mendix-wordmark-white.svg" alt="Mendix Logo White">
+                                <a href="./images/mendix-logos/mendix-wordmark-white.svg" download 
+                                   class="absolute p-2 text-white transition-opacity rounded-md opacity-0 bottom-4 right-4 bg-primary-blueLM group-hover:opacity-100">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.3075L6.96753 10.2825L8.03253 9.2175L11.25 12.4425V1.5H12.75V12.4425L15.9675 9.2175L17.0325 10.2825L12 15.3075ZM16.5 6H19.5C20.325 6 21 6.675 21 7.5V18C21 18.825 20.325 19.5 19.5 19.5H4.5C3.675 19.5 3 18.825 3 18V7.5C3 6.675 3.675 6 4.5 6H7.5V7.5H4.5V18H19.5V7.5H16.5V6Z" fill="white"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+        
+                    
+                </div>
+             <!-- Logos Subsection -->
+             <div>
+                <div class="grid grid-cols-1 gap-6 py-8 mt-6 border-t border-neutral-midnight sm:grid-cols-2">
+                    <h3 class="mb-2 text-2xl font-bold md:text-3xl text-neutral-midnight">Brandmark</h3>
+                    <p class="text-base text-gray-600">
+                        The Solo Frame with MX is used for special moments and within the product. At smaller scales the MX is adjusted to take up the center width of the frame.
+                    </p>
+                </div>
+                    
+                        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                            <!-- Individual Logo Item -->
+                            <div class="relative p-10 rounded-lg shadow-md group bg-neutral-white">
+                                <img class="w-full" src="./images/mendix-logos/mendix-brandmark-blue.svg" alt="Mendix Logo Blue">
+                                <a href="./images/mendix-logos/mendix-brandmark-blue.svg" download 
+                                   class="absolute p-2 text-white transition-opacity rounded-md opacity-0 bottom-4 right-4 bg-primary-blueLM group-hover:opacity-100">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.3075L6.96753 10.2825L8.03253 9.2175L11.25 12.4425V1.5H12.75V12.4425L15.9675 9.2175L17.0325 10.2825L12 15.3075ZM16.5 6H19.5C20.325 6 21 6.675 21 7.5V18C21 18.825 20.325 19.5 19.5 19.5H4.5C3.675 19.5 3 18.825 3 18V7.5C3 6.675 3.675 6 4.5 6H7.5V7.5H4.5V18H19.5V7.5H16.5V6Z" fill="white"/>
+                                    </svg>
+                                </a>
+                            </div>
+                    
+                            <!-- Repeat for other logo items -->
+                             
+                            <div class="relative p-10 rounded-lg shadow-md group bg-neutral-white">
+                                <img class="w-full" src="./images/mendix-logos/mendix-brandmark-midnight.svg" alt="Mendix Logo Midnight">
+                                <a href="./images/mendix-logos/mendix-brandmark-midnight.svg" download 
+                                   class="absolute p-2 text-white transition-opacity rounded-md opacity-0 bottom-4 right-4 bg-primary-blueLM group-hover:opacity-100">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.3075L6.96753 10.2825L8.03253 9.2175L11.25 12.4425V1.5H12.75V12.4425L15.9675 9.2175L17.0325 10.2825L12 15.3075ZM16.5 6H19.5C20.325 6 21 6.675 21 7.5V18C21 18.825 20.325 19.5 19.5 19.5H4.5C3.675 19.5 3 18.825 3 18V7.5C3 6.675 3.675 6 4.5 6H7.5V7.5H4.5V18H19.5V7.5H16.5V6Z" fill="white"/>
+                                    </svg>
+                                </a>
+                            </div>
+                    
+                            <div class="relative p-10 rounded-lg shadow-md group bg-neutral-midnight">
+                                <img class="w-full" src="./images/mendix-logos/mendix-brandmark-white.svg" alt="Mendix Logo White">
+                                <a href="./images/mendix-logos/mendix-brandmark-white.svg" download 
+                                   class="absolute p-2 text-white transition-opacity rounded-md opacity-0 bottom-4 right-4 bg-primary-blueLM group-hover:opacity-100">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.3075L6.96753 10.2825L8.03253 9.2175L11.25 12.4425V1.5H12.75V12.4425L15.9675 9.2175L17.0325 10.2825L12 15.3075ZM16.5 6H19.5C20.325 6 21 6.675 21 7.5V18C21 18.825 20.325 19.5 19.5 19.5H4.5C3.675 19.5 3 18.825 3 18V7.5C3 6.675 3.675 6 4.5 6H7.5V7.5H4.5V18H19.5V7.5H16.5V6Z" fill="white"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        
+        
+                    
+                </div>
+                <div>
+                    <div class="grid grid-cols-1 gap-6 py-8 mt-6 border-t border-neutral-midnight sm:grid-cols-2">
+                        <h3 class="mb-2 text-2xl font-bold md:text-3xl text-neutral-midnight">Brandmark</h3>
+                        <p class="text-base text-gray-600">
+                            The Solo Frame with MX is used for special moments and within the product. At smaller scales the MX is adjusted to take up the center width of the frame.
+                        </p>
+                    </div>
+                        
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                <!-- Individual Logo Item -->
+                                <div class="relative px-32 py-16 rounded-lg shadow-md group bg-neutral-white">
+                                    <img class="w-full" src="./images/mendix-logos/mendix-brandmark-blue-small-use.svg" alt="Mendix Logo Blue">
+                                    <a href="./images/mendix-logos/mendix-brandmark-blue-small-use.svg" download 
+                                       class="absolute p-2 text-white transition-opacity rounded-md opacity-0 bottom-4 right-4 bg-primary-blueLM group-hover:opacity-100">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.3075L6.96753 10.2825L8.03253 9.2175L11.25 12.4425V1.5H12.75V12.4425L15.9675 9.2175L17.0325 10.2825L12 15.3075ZM16.5 6H19.5C20.325 6 21 6.675 21 7.5V18C21 18.825 20.325 19.5 19.5 19.5H4.5C3.675 19.5 3 18.825 3 18V7.5C3 6.675 3.675 6 4.5 6H7.5V7.5H4.5V18H19.5V7.5H16.5V6Z" fill="white"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                        
+                                <!-- Repeat for other logo items -->
+                                 
+                                <div class="relative px-32 py-16 rounded-lg shadow-md group bg-neutral-white">
+                                    <img class="w-full" src="./images/mendix-logos/mendix-brandmark-midnight-small-use.svg" alt="Mendix Logo Midnight">
+                                    <a href="./images/mendix-logos/mendix-brandmark-midnight-small-use.svg" download 
+                                       class="absolute p-2 text-white transition-opacity rounded-md opacity-0 bottom-4 right-4 bg-primary-blueLM group-hover:opacity-100">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.3075L6.96753 10.2825L8.03253 9.2175L11.25 12.4425V1.5H12.75V12.4425L15.9675 9.2175L17.0325 10.2825L12 15.3075ZM16.5 6H19.5C20.325 6 21 6.675 21 7.5V18C21 18.825 20.325 19.5 19.5 19.5H4.5C3.675 19.5 3 18.825 3 18V7.5C3 6.675 3.675 6 4.5 6H7.5V7.5H4.5V18H19.5V7.5H16.5V6Z" fill="white"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                        
+                                <div class="relative px-32 py-16 rounded-lg shadow-md group bg-neutral-midnight">
+                                    <img class="w-full" src="./images/mendix-logos/mendix-brandmark-white-small-use.svg" alt="Mendix Logo White">
+                                    <a href="./images/mendix-logos/mendix-brandmark-white-small-use.svg" download 
+                                       class="absolute p-2 text-white transition-opacity rounded-md opacity-0 bottom-4 right-4 bg-primary-blueLM group-hover:opacity-100">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 15.3075L6.96753 10.2825L8.03253 9.2175L11.25 12.4425V1.5H12.75V12.4425L15.9675 9.2175L17.0325 10.2825L12 15.3075ZM16.5 6H19.5C20.325 6 21 6.675 21 7.5V18C21 18.825 20.325 19.5 19.5 19.5H4.5C3.675 19.5 3 18.825 3 18V7.5C3 6.675 3.675 6 4.5 6H7.5V7.5H4.5V18H19.5V7.5H16.5V6Z" fill="white"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+    
+                            
+            
+                        
+                    </div>
+                     
+
+    </section>
+
+              
+            </main>
+        
+    </div>
+
+    <script>
+        // Sidebar Toggle
+        const openMenuButton = document.getElementById('open-menu');
+        const closeMenuButton = document.getElementById('close-menu');
+        const sidebar = document.getElementById('sidebar');
+
+        openMenuButton.addEventListener("click", () => {
+  sidebar.classList.remove("-translate-x-full");
+  sidebar.setAttribute("aria-hidden", "false");
+});
+
+closeMenuButton.addEventListener("click", () => {
+  sidebar.classList.add("-translate-x-full");
+  sidebar.setAttribute("aria-hidden", "true");
+});
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active Link Highlighting
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active-link");
+                if (link.getAttribute("href").includes(current)) {
+                    link.classList.add("active-link");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

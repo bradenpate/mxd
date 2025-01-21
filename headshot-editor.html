@@ -1,27 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
-  }
-  
-  #cropperContainer {
-    margin: 20px auto;
-    max-width: 80%;
-  }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  #previewContainer div {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 8px;
-  }</style>
+  <style>/* General Body Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      color: #333;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    #app {
+      display: flex;
+      gap: 20px;
+    }
+    
+    /* Left Column Styling */
+    #left-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    
+    #cropperContainer img {
+      max-width: 100%;
+      margin: 20px 0;
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+      background-color: #0056b3;
+    }
+    
+    /* Right Column Styling */
+    #right-column {
+      flex: 1;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+      overflow-y: auto;
+    }
+    
+    #right-column h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    #previewContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
+  gap: 20px; /* Spacing between grid items */
+  justify-items: center; /* Center items horizontally */
+  align-items: start; /* Align items at the top */
+}
+
+#previewContainer div {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f3f3f3;
+}
+
+#previewContainer img {
+  max-width: 100px;
+  max-height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+#previewContainer button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#previewContainer button:hover {
+  background-color: #218838;
+}</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Headshot Editor</title>
@@ -30,19 +111,23 @@
 </head>
 <body>
   <h1>Headshot Editor</h1>
-
-  <!-- File Upload -->
-  <input type="file" id="fileInput" accept="image/*">
-  <div id="cropperContainer" style="display: none;">
-    <img id="image" alt="Upload an image to crop">
+  
+  <div id="app">
+    <!-- Left Column: Upload and Crop -->
+    <div id="left-column">
+      <input type="file" id="fileInput" accept="image/*">
+      <div id="cropperContainer" style="display: none;">
+        <img id="image" alt="Upload an image to crop">
+      </div>
+      <button id="generateButton" style="display: none;">Generate Previews</button>
+    </div>
+    
+    <!-- Right Column: Previews -->
+    <div id="right-column">
+      <h2>Previews</h2>
+      <div id="previewContainer"></div>
+    </div>
   </div>
-
-  <!-- Generate Button -->
-  <button id="generateButton" style="display: block; margin: 20px;">Generate Previews</button>
-
-  <!-- Preview Container -->
-  <div id="previewContainer" style="display: flex; flex-wrap: wrap; justify-content: center;"></div>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
   <script src="./app.js"></script>
 </body>

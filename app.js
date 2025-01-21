@@ -12,10 +12,11 @@ fileInput.addEventListener('change', (e) => {
     reader.onload = () => {
       image.src = reader.result;
       cropperContainer.style.display = 'block';
+      document.getElementById('generateButton').style.display = 'block';
 
       // Initialize Cropper.js
       cropper = new Cropper(image, {
-        aspectRatio: 1, // Crop in a square by default
+        aspectRatio: 1,
         viewMode: 1,
       });
     };
@@ -145,22 +146,22 @@ document.getElementById('generateButton').addEventListener('click', () => {
     // Generate and display the 4 versions
     createPreview(
       createCircularImage(croppedCanvas),
-      'Circle Cropped Color',
+      'Circle Color',
       'circle-color.png'
     );
     createPreview(
       createCircularImage(croppedCanvas, true),
-      'Circle Cropped Black & White',
+      'Circle Black & White',
       'circle-bw.png'
     );
     createPreview(
       createSquareImage(croppedCanvas),
-      'Square Cropped Color',
+      'Square Color',
       'square-color.png'
     );
     createPreview(
       createSquareImage(croppedCanvas, true),
-      'Square Cropped Black & White',
+      'Square Black & White',
       'square-bw.png'
     );
   }

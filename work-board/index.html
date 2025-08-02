@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Work Board</title>
+  <link rel="stylesheet" href="work-board.css">
+</head>
+<body>
+  <header>
+    <h1>Work Board</h1>
+    <button id="refreshBtn">Refresh</button>
+    <input id="searchInput" placeholder="Search metadata..." />
+  </header>
+
+  <section id="filters"></section>
+
+  <main id="gallery"></main>
+
+  <div id="lightbox" class="hidden">
+    <div class="overlay"></div>
+    <div class="content">
+      <button id="closeLightbox">&times;</button>
+      <img id="lightboxImg" alt="" />
+      <ul id="metaList"></ul>
+      <a id="fileLink" target="_blank">Go to file</a>
+    </div>
+  </div>
+
+  <script type="module" src="work-board.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+body { font-family: sans-serif; margin: 0; }
+header { display: flex; gap: 1rem; align-items: center; padding: 1rem; background: #0A1324; color: white; }
+#filters { display: flex; flex-wrap: wrap; gap: 1rem; padding: 1rem; }
+.filter-group { display: flex; flex-direction: column; }
+#gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 1rem; padding: 1rem; }
+.card img { width: 100%; height: auto; display: block; cursor: pointer; }
+
+#lightbox.hidden { display: none; }
+#lightbox .overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); }
+#lightbox .content { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 1rem; max-width: 80vw; max-height: 80vh; overflow: auto; }
+#closeLightbox { position: absolute; right: 0.5rem; top: 0.5rem; background: none; border: none; font-size: 2rem; cursor: pointer; }
+#fileLink.hidden { display: none; }

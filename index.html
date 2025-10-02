@@ -24,9 +24,10 @@
         margin-bottom: 40px;
       }
       .container {
-        max-width: 600px;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 50px;
+        
       }
       label {
         display: block;
@@ -85,103 +86,186 @@
       .header-wrapper{
         background-color: #0A1324;
       }
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 20px;
+        row-gap: 18px;
+        align-items: start;
+      }
+      .field label {
+        margin-top: 0;
+      }
+      .full-span {
+        grid-column: 1 / -1;
+      }
+      .field-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+      @media (max-width: 640px) {
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+        .full-span {
+          grid-column: auto;
+        }
+      }
     </style>
 </head>
 <body>
   <div class="header-wrapper"><div class="header">
     <h1>Email Signature Generator</h1>
-    <img src="./images/mendix-logo-white.svg" alt="Mendix Logo" style="width: 200px; display: block; border: 0;">
+    <img src="./images/siemens-mx.svg" alt="Siemens Logo" style="width: 00px; display: block; border: 0;">
     
   </div></div>
   <div style="display: flex; max-width:1500px; margin: 0 auto;">
   <div class="container" style="margin-top:30px;">
     <h2 style="margin-bottom:0px;">Add Your Information</h2>
     <p style="color: #777e8f; margin-top:8px;">No information is stored or shared. Blank fields are omitted from the signature.</p>
-    <label for="name">Name</label>
-    <input type="text" id="name" placeholder="Your Name">
+    <div class="form-grid">
+    <div class="field-group full-span">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your Name">
+      </div>
+      <div class="field">
+        <label for="pronouns">Pronouns</label>
+        <input type="text" id="pronouns" placeholder="Your Pronouns (e.g., they/them)">
+      </div>
+    </div>
 
-    <label for="pronouns">Pronouns</label>
-    <input type="text" id="pronouns" placeholder="Your Pronouns (e.g., they/them)">
+    <div class="field-group full-span">
+      <div class="field">
+        <label for="companyname">Company Name</label>
+        <input type="text" id="companyname" placeholder="Company Name">
+      </div>
 
-    <label for="companyname">Company Name</label>
-    <input type="text" id="companyname" placeholder="Company Name">
+      <div class="field">
+        <label for="businessname">Business Name</label>
+        <input type="text" id="businessname" placeholder="Business Name">
+      </div>
 
-    <label for="businessname">Business Name</label>
-    <input type="text" id="businessname" placeholder="Business Name">
+      <div class="field">
+        <label for="businessunitname">Business Unit</label>
+        <input type="text" id="businessunitname" placeholder="Business Unit">
+      </div>
 
-    <label for="businessunitname">Business Unit</label>
-    <input type="text" id="businessunitname" placeholder="Business Unit">
+      <div class="field">
+        <label for="departmentorgname">Department Org Name</label>
+        <input type="text" id="departmentorgname" placeholder="Department Org Name">
+      </div>
 
-    <label for="departmentorgname">Department Org Name</label>
-    <input type="text" id="departmentorgname" placeholder="Department Org Name">
+      <div class="field">
+        <label for="orgcode">Org Code</label>
+        <input type="text" id="orgcode" placeholder="Org Code">
+      </div>
+    </div>
 
-   <label for="orgcode">Org Code</label>
-    <input type="text" id="orgcode" placeholder="Org Code"> 
+    <div class="field-group full-span">
+      <div class="field">
+        <label for="street">Street</label>
+        <input type="text" id="street" placeholder="Street Address">
+      </div>
 
-    <label for="street">Street</label>
-    <input type="text" id="street" placeholder="Street Address">
+      <div class="field">
+        <label for="zipcode">Zip Code</label>
+        <input type="text" id="zipcode" placeholder="Zip Code">
+      </div>
 
-    <label for="zipcode">Zip Code</label>
-    <input type="text" id="zipcode" placeholder="Zip Code">
+      <div class="field">
+        <label for="city">City</label>
+        <input type="text" id="city" placeholder="City">
+      </div>
 
-    <label for="city">City</label>
-    <input type="text" id="city" placeholder="City">
+      <div class="field">
+        <label for="country">Country</label>
+        <input type="text" id="country" placeholder="Country">
+      </div>
+    </div>
 
-    <label for="country">Country</label>
-    <input type="text" id="country" placeholder="Country">
+    <div class="field">
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" placeholder="Office Phone Number">
+    </div>
 
-    <label for="phone">Phone</label>
-    <input type="text" id="phone" placeholder="Office Phone Number">
+    <div class="field-group full-span">
+      <div class="field">
+        <label for="fax">Fax</label>
+        <input type="text" id="fax" placeholder="Fax Number">
+      </div>
 
-    <label for="fax">Fax</label>
-    <input type="text" id="fax" placeholder="Fax Number">
+      <div class="field">
+        <label for="mobile">Mobile</label>
+        <input type="text" id="mobile" placeholder="Mobile Number">
+      </div>
 
-    <label for="mobile">Mobile</label>
-    <input type="text" id="mobile" placeholder="Mobile Number">
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Your Email">
+      </div>
+    </div>
 
+    <button class="full-span" onclick="generateSignature()">Generate Signature</button>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" placeholder="Your Email">
-
-    <button onclick="generateSignature()">Generate Signature</button>
-
-    <h2 style="margin-top: 50px;">Signature Preview</h2>
-    <div id="signature-preview"></div>
-
-    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    </div><!-- end .form-grid -->
   </div>
 
-  <div class="container" style="background-color: #efefef; margin-top:60px; padding: 15px 40px; border-radius: 10px; ">
-    <h3>How do I add my new email signature to Outlook?</h3>
-    <h4 style="padding-top:20px;">For Outlook on Windows</h4>
-    <ol>
-      <li>Select <strong>New Email</strong>.</li>
+  <div class="container" style="max-width: 750px; background-color: #efefef; margin-top:60px; padding: 15px 40px; border-radius: 10px; ">
+    <h2 class="full-span" style="margin-top: 30px;">Signature Preview</h2>
+    <div id="signature-preview" class="full-span" style="background-color: #ffffff; padding: 20px;"></div>
+    <button class="full-span" onclick="copyToClipboard()">Copy to Clipboard</button>
 
-      <li>From the<strong> Insert</strong> section of the ribbon, select <strong>Signature > Signatures</strong><div class=""></div></li>
-        
-        <li>Select <strong>New</strong>, type a name for the signature, and select <strong>OK</strong>.</li>
-        
-        <li>Under <strong>Edit signature</strong>, paste your signature.</li>
-        
-        <li>With your new signature selected from the list above the editing box, go to <strong>Select default signatures</strong> and choose whether to apply the signature to new messages and/or to replies and forwards.</li>
-        
-        <li>Select <strong>New Email</strong> to see the signature you created.</li>
-    </ol>
-  
-    <h4 style="padding-top:20px;">For Outlook on Mac</h4>
-    <ol>
-      <li>Go to <strong>Outlook > Settings > Signatures</strong>.</li>
-      <li>Select the <strong>“Standard”</strong> signature and click <strong>Edit</strong>, or create a new signature.</li>
-      <li>Paste from your clipboard into the signature field.</li>
-      <li>Select <strong>Save</strong>.</li>
-      <li>You can now set this signature as the default for new and reply messages.</li>
-    </ol>
-   <h4 style="padding-top:20px;">See more information from Microsoft</h4>
-   <p style="padding-bottom: 10px;"><a style="padding-left:16px; color:#146FF4" href="https://support.microsoft.com/en-us/office/create-and-add-an-email-signature-in-outlook-8ee5d4f4-68fd-464a-a1c1-0e1c80bb27f2#PickTab=New_Outlook">Windows Users</a> <a style="padding-left:16px; color: #146FF4;" href="https://support.microsoft.com/en-us/office/create-and-insert-a-signature-in-outlook-for-mac-f4d21492-0956-4429-95ad-2769745b539c">Mac Users</a></p>
-   <h4 style="padding-top:20px;">Made by the Brand Team</h4>
-   <p style="padding-bottom: 10px;">Find more helpful resources on <a style="color:#146FF4" href="https://mendix.atlassian.net/wiki/x/voEAj">Confluence</a> </p>
+    <h2 class="full-span" style="margin-top: 30px;">How do I add my new email signature to Outlook?</h2>
+
+    <!-- Instructions grid: two columns (Windows / Mac) -->
+    <div class="form-grid" style="margin-top: 10px;">
+      <div>
+        <h4 style="padding-top:0;">For Outlook on Windows</h4>
+        <ol>
+          <li>Select <strong>New Email</strong>.</li>
+          <li>From the <strong>Insert</strong> section of the ribbon, select <strong>Signature &gt; Signatures</strong>.</li>
+          <li>Select <strong>New</strong>, type a name for the signature, and select <strong>OK</strong>.</li>
+          <li>Under <strong>Edit signature</strong>, paste your signature.</li>
+          <li>With your new signature selected, go to <strong>Select default signatures</strong> and choose whether to apply it to new messages and/or replies and forwards.</li>
+          <li>Select <strong>New Email</strong> to see the signature you created.</li>
+        </ol>
+      </div>
+
+      <div>
+        <h4 style="padding-top:0;">For Outlook on Mac</h4>
+        <ol>
+          <li>Go to <strong>Outlook &gt; Settings &gt; Signatures</strong>.</li>
+          <li>Select the <strong>“Standard”</strong> signature and click <strong>Edit</strong>, or create a new signature.</li>
+          <li>Paste from your clipboard into the signature field.</li>
+          <li>Select <strong>Save</strong>.</li>
+          <li>Set this signature as the default for new and reply messages if desired.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Links / More info grid: two columns -->
+    <div class="form-grid" style="margin-top: 20px; align-items: start;">
+      <div>
+        <h4 style="padding-top:0;">See more information from Microsoft</h4>
+        <p style="padding-bottom: 10px; margin: 0;">
+          <a style="color:#146FF4" href="https://support.microsoft.com/en-us/office/create-and-add-an-email-signature-in-outlook-8ee5d4f4-68fd-464a-a1c1-0e1c80bb27f2#PickTab=New_Outlook">Windows Users</a>
+        </p>
+        <p style="margin: 0;">
+          <a style="color: #146FF4;" href="https://support.microsoft.com/en-us/office/create-and-insert-a-signature-in-outlook-for-mac-f4d21492-0956-4429-95ad-2769745b539c">Mac Users</a>
+        </p>
+      </div>
+
+      <div>
+        <h4 style="padding-top:0;">Made by the Mendix Brand Team</h4>
+        <p style="padding-bottom: 10px; margin: 0;">
+          Find more helpful resources on <a style="color:#146FF4" href="https://mendix.atlassian.net/wiki/x/voEAj">Confluence</a>
+        </p>
+      </div>
     </div>
   </div>
+</div>
 </body>
 <script>
   function generateSignature() {

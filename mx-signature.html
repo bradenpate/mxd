@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,42 +105,14 @@
     <label for="pronouns">Pronouns</label>
     <input type="text" id="pronouns" placeholder="Your Pronouns (e.g., they/them)">
 
-    <label for="companyname">Company Name</label>
-    <input type="text" id="companyname" placeholder="Company Name">
+    <label for="title">Title</label>
+    <input type="text" id="title" placeholder="Your Title">
 
-    <label for="businessname">Business Name</label>
-    <input type="text" id="businessname" placeholder="Business Name">
-
-    <label for="businessunitname">Business Unit</label>
-    <input type="text" id="businessunitname" placeholder="Business Unit">
-
-    <label for="departmentorgname">Department Org Name</label>
-    <input type="text" id="departmentorgname" placeholder="Department Org Name">
-
-   <label for="orgcode">Org Code</label>
-    <input type="text" id="orgcode" placeholder="Org Code"> 
-
-    <label for="street">Street</label>
-    <input type="text" id="street" placeholder="Street Address">
-
-    <label for="zipcode">Zip Code</label>
-    <input type="text" id="zipcode" placeholder="Zip Code">
-
-    <label for="city">City</label>
-    <input type="text" id="city" placeholder="City">
-
-    <label for="country">Country</label>
-    <input type="text" id="country" placeholder="Country">
+    <label for="department">Department</label>
+    <input type="text" id="department" placeholder="Your Department">
 
     <label for="phone">Phone</label>
-    <input type="text" id="phone" placeholder="Office Phone Number">
-
-    <label for="fax">Fax</label>
-    <input type="text" id="fax" placeholder="Fax Number">
-
-    <label for="mobile">Mobile</label>
-    <input type="text" id="mobile" placeholder="Mobile Number">
-
+    <input type="text" id="phone" placeholder="Your Phone Number">
 
     <label for="email">Email</label>
     <input type="email" id="email" placeholder="Your Email">
@@ -187,67 +161,32 @@
   function generateSignature() {
     const name = document.getElementById('name').value;
     const pronouns = document.getElementById('pronouns').value;
-    const email = document.getElementById('email').value;
-    const companyname = document.getElementById('companyname').value;
-    const businessname = document.getElementById('businessname').value;
-    const businessunitname = document.getElementById('businessunitname').value;
-    const departmentorgname = document.getElementById('departmentorgname').value;
-    const orgcode = document.getElementById('orgcode').value;
-    const street = document.getElementById('street').value;
-    const zipcode = document.getElementById('zipcode').value;
-    const city = document.getElementById('city').value;
-    const country = document.getElementById('country').value;
+    const title = document.getElementById('title').value;
+    const department = document.getElementById('department').value;
     const phone = document.getElementById('phone').value;
-    const fax = document.getElementById('fax').value;
-    const mobile = document.getElementById('mobile').value;
+    const email = document.getElementById('email').value;
 
-    const pronounsText = pronouns ? ` <span style="font-weight: normal; font-size: 8px;">—${pronouns}</span>` : '';
+    const pronounsText = pronouns ? ` <span style="font-weight: normal; font-size: 10px;">(${pronouns})</span>` : '';
 
     const signatureHTML = `
-      <table style="font-family: Arial, sans-serif; color: #000000; font-size: 10px; line-height: 1; border-spacing: 0; border-collapse: collapse; width: 100%;">
+      <table style="font-family: Arial, sans-serif; color: #333; font-size: 12px; line-height: 1; border-spacing: 0; border-collapse: collapse; width: 100%;">
         <!-- Name -->
-        <tr style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 12px;">
-          <td>${name}<span style="font-size: 8px;">${pronounsText}</span></td>
-        </tr>
-        <!-- Company name and legal form -->
         <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 12px;">${companyname}</td>
+          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 12px; font-weight: bold; line-height: 12px;">
+            ${name}${pronounsText}
+          </td>
         </tr>
-        <!-- Business Name -->
+        <!-- Title -->
         <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${businessname}</td>
+          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 12px; line-height: 12px;">${title}</td>
         </tr>
-        <!-- Business Unit name -->
+        <!-- Department -->
         <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${businessunitname}</td>
-        </tr>
-        <!-- Department OrgName -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${departmentorgname}</td>
-        </tr>
-        <!-- OrgCode -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${orgcode}</td>
-        </tr>
-        <!-- Street -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${street}</td>
-        </tr>
-        <!-- ZIP/postal code and city, country -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${zipcode} ${city}, ${country}</td>
+          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 12px; color: #333; line-height: 12px;">${department}</td>
         </tr>
         <!-- Phone -->
         <tr>
-          <td style="font-family: Arial, sans-serif; padding: 10px 0 0 0; font-size: 10px; line-height: 10px;">Tel.: ${phone}</td>
-        </tr>
-        <!-- Fax -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 10px 0 0 0; font-size: 10px; line-height: 10px;">Fax: ${fax}</td>
-        </tr>
-        <!-- Mobile -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 10px 0 0 0; font-size: 10px; line-height: 10px;">Mobile: ${mobile}</td>
+          <td style="font-family: Arial, sans-serif; padding: 10px 0 0 0; font-size: 10px; line-height: 10px;">${phone}</td>
         </tr>
         <!-- Email -->
         <tr>
@@ -258,28 +197,15 @@
         <!-- Website -->
         <tr>
           <td style="font-family: Arial, sans-serif; padding: 0px 0 0 0; font-size: 10px; line-height: 10px;">
-            <a href="https://mendix.com" style="color: #146FF4; text-decoration: none;">www.mendix.com</a>
-          </td>
-        </tr>
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0px 0 0 0; font-size: 10px; line-height: 10px;">
-            <a href="https://siemens.com" style="color: #146FF4; text-decoration: none;">www.siemens.com</a>
+            <a href="https://mendix.com" style="color: #146FF4; text-decoration: none;">mendix.com</a>
           </td>
         </tr>
         <!-- Logo -->
         <tr>
-          <td style="padding: 30px 0 0 0;">
+          <td style="padding: 15px 0 0 0;">
             <a href="https://mendix.com">
-              <img src="https://email.mendix.design/images/siemens.png" alt="Siemens Logo" width="133" style="display: block; border: 0;">
+              <img src="https://email.mendix.design/images/mendix-logo.png" alt="Mendix Logo" width="150" style="display: block; border: 0;">
             </a>
-          </td>
-        </tr>
-        <!-- Disclaimer -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0px 0 0 0; font-size: 8px; line-height: 10px;">
-            Important notice: This e-mail and any attachment thereof contain corporate proprietary information. If you have received it 
-by mistake, please notify us immediately by reply e-mail and delete this e-mail and its attachments from your system. Thank you.
-
           </td>
         </tr>
       </table>

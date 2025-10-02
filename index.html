@@ -203,89 +203,89 @@
 
     const pronounsText = pronouns ? `<span style="font-size: 8px;"> - ${pronouns}</span>` : '';
 
-    const signatureHTML = `
-      <table style="font-family: Arial, sans-serif; color: #000000; font-size: 10px; line-height: 1; border-spacing: 0; border-collapse: collapse; width: 100%;">
-        <!-- Name -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 12px;">${name}${pronounsText}</td>
-        </tr>
-          <!-- Space -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 12px;">&nbsp;</td>
-        </tr>
-        <!-- Company name and legal form -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 12px;">${companyname}</td>
-        </tr>
-        <!-- Business Name -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${businessname}</td>
-        </tr>
-        <!-- Business Unit name -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${businessunitname}</td>
-        </tr>
-        <!-- Department OrgName -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${departmentorgname}</td>
-        </tr>
-        <!-- OrgCode -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${orgcode}</td>
-        </tr>
-        <!-- Street -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${street}</td>
-        </tr>
-        <!-- ZIP/postal code and city, country -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${zipcode} ${city}, ${country}</td>
-        </tr>
-        <!-- Phone -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 10px;">Tel.: ${phone}</td>
-        </tr>
-        <!-- Fax -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 10px;">Fax: ${fax}</td>
-        </tr>
-        <!-- Mobile -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 10px;">Mobile: ${mobile}</td>
-        </tr>
-        <!-- Email -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 10px;">
+    let rows = [];
+
+    // Name row
+    rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 12px;">${name}${pronounsText}</td></tr>`);
+
+    // Space row
+    rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 12px;">&nbsp;</td></tr>`);
+
+    // Optional fields
+    if (companyname) {
+      rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 12px;">${companyname}</td></tr>`);
+    }
+    if (businessname) {
+      rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${businessname}</td></tr>`);
+    }
+    if (businessunitname) {
+      rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${businessunitname}</td></tr>`);
+    }
+    if (departmentorgname) {
+      rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${departmentorgname}</td></tr>`);
+    }
+    if (orgcode) {
+      rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${orgcode}</td></tr>`);
+    }
+    if (street) {
+      rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${street}</td></tr>`);
+    }
+
+    // ZIP/city/country line - only if at least one is present
+    if (zipcode || city || country) {
+      let locationParts = [];
+      if (zipcode) locationParts.push(zipcode);
+      if (city) locationParts.push(city);
+      let locationString = locationParts.join(' ');
+      if (country) {
+        if (locationString) {
+          locationString += ', ' + country;
+        } else {
+          locationString = country;
+        }
+      }
+      rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; color: #000000; line-height: 12px;">${locationString}</td></tr>`);
+    }
+
+    if (phone) {
+      rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 10px;">Tel.: ${phone}</td></tr>`);
+    }
+    if (fax) {
+      rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 10px;">Fax: ${fax}</td></tr>`);
+    }
+    if (mobile) {
+      rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 10px;">Mobile: ${mobile}</td></tr>`);
+    }
+    if (email) {
+      rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0; font-size: 10px; line-height: 10px;">
             <a href="mailto:${email}" style="color: #146FF4; text-decoration: none;">${email}</a>
-          </td>
-        </tr>
-        <!-- Website -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0px 0 0 0; font-size: 10px; line-height: 10px;">
+          </td></tr>`);
+    }
+
+    // Website links
+    rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0px 0 0 0; font-size: 10px; line-height: 10px;">
             <a href="https://mendix.com" style="color: #146FF4; text-decoration: none;">www.mendix.com</a>
-          </td>
-        </tr>
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0px 0 0 0; font-size: 10px; line-height: 10px;">
+          </td></tr>`);
+    rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0px 0 0 0; font-size: 10px; line-height: 10px;">
             <a href="https://siemens.com" style="color: #146FF4; text-decoration: none;">www.siemens.com</a>
-          </td>
-        </tr>
-        <!-- Logo -->
-        <tr>
-          <td style="padding: 30px 0 45px 0;">
+          </td></tr>`);
+
+    // Logo
+    rows.push(`<tr><td style="padding: 30px 0 45px 0;">
             <a href="https://mendix.com">
               <img src="https://email.mendix.design/images/siemens.png" alt="Siemens Logo" width="133" style="display: block; border: 0;">
             </a>
-          </td>
-        </tr>
-        <!-- Disclaimer -->
-        <tr>
-          <td style="font-family: Arial, sans-serif; padding: 0px 0 0 0; font-size: 8px; line-height: 10px;">
+          </td></tr>`);
+
+    // Disclaimer
+    rows.push(`<tr><td style="font-family: Arial, sans-serif; padding: 0px 0 0 0; font-size: 8px; line-height: 10px;">
             Important notice: This e-mail and any attachment thereof contain corporate proprietary information. If you have received it 
 by mistake, please notify us immediately by reply e-mail and delete this e-mail and its attachments from your system. Thank you.
+          </td></tr>`);
 
-          </td>
-        </tr>
+    const signatureHTML = `
+      <table style="font-family: Arial, sans-serif; color: #000000; font-size: 10px; line-height: 1; border-spacing: 0; border-collapse: collapse; width: 100%;">
+        ${rows.join('')}
       </table>
     `;
 
